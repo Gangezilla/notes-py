@@ -1,13 +1,15 @@
 import tkinter as tk
 from all_notes_gui import AllNotesGUI
+from current_note_gui import CurrentNoteGUI
 
 
 class GUI:
     def __init__(self,
-                 allnotes,
-                 currentnote,
+                 all_notes,
+                 current_note,
                  new_note,
                  select_note,
+                 save_note,
                  ):
         root = tk.Tk()
 
@@ -23,13 +25,17 @@ class GUI:
         button = tk.Button(menu_frame, text='New', command=new_note)
         button.pack()
 
-        AllNotesGUI(allnotes,
+        AllNotesGUI(all_notes,
                     frame=notes_frame,
                     select_note=select_note
                     )
 
+        CurrentNoteGUI(
+            frame=current_note_frame,
+            selected_note=current_note,
+            save_note=save_note,
+        )
+
         root.title('pack test')
         root.geometry('800x600')
         root.mainloop()
-
-# allow clicking on a label, change current note

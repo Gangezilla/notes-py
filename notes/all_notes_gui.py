@@ -7,7 +7,6 @@ class AllNotesGUI:
 
     def create_gui_elements(self, all_notes, frame, select_note):
         for note in all_notes:
-            # SelectableNote(note, frame, select_note)
             self.make_selectable_note(note, frame, select_note)
 
     def make_selectable_note(self, note, frame, select_note):
