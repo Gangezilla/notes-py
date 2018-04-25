@@ -17,7 +17,7 @@ class Application:
         }
         self.allNotes = [note1, note2]
         self.currentNote = self.allNotes[0]
-        GUI(
+        self.GUI = GUI(
             all_notes=self.allNotes,
             current_note=self.currentNote,
             new_note=self.new_note,
@@ -32,7 +32,11 @@ class Application:
         print('d=time to delete')
 
     def select_note(self, selected_note):
+        print(self.GUI)
         self.currentNote = selected_note
+        self.GUI.update_selected_note(
+            current_note=self.currentNote,
+        )
         print(self.currentNote)
 
     def save_note(self, new_note):

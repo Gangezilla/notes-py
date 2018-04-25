@@ -24,5 +24,7 @@ class CurrentNoteGUI:
         new_note["Content"] = text.get(1.0, 'end')
         save_note(new_note)
 
+    # def update_selected_note(self, selected_note):
+
     # def delete(self, selected_note):
 

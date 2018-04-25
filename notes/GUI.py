@@ -25,12 +25,13 @@ class GUI:
         button = tk.Button(menu_frame, text='New', command=new_note)
         button.pack()
 
-        AllNotesGUI(all_notes,
+        self.AllNotesGUI = AllNotesGUI(
+                    all_notes,
                     frame=notes_frame,
                     select_note=select_note
                     )
 
-        CurrentNoteGUI(
+        self.CurrentNoteGUI = CurrentNoteGUI(
             frame=current_note_frame,
             selected_note=current_note,
             save_note=save_note,
@@ -39,3 +40,7 @@ class GUI:
         root.title('pack test')
         root.geometry('800x600')
         root.mainloop()
+
+        def update_selected_note(self, selected_note):
+            print('hello is this thing on')
+            self.CurrentNoteGUI.update_selected_note(selected_note)
